@@ -7,7 +7,9 @@ class AppColors {
   static const Color accent = Color(0xFFFB7053);
   static const Color textColor = Color(0xFF262626);
   static const Color grey = Color(0xFF3B3B3A);
-  static const Color darkGrey = Color(0xFF262626);
+  static const Color iconColor = Color(0xFF262626);
+  static const Color appBarLeadingIconColor = Color(0xFF000000);
+  static const Color shadowColor = Color(0xFFFAFAFA);
 }
 
 MaterialColor createMaterialColor(Color color) {
