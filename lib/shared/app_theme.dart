@@ -1,5 +1,4 @@
-import 'package:coding_challenge/constants/colors.dart';
-import 'package:coding_challenge/constants/doubles.dart';
+import 'package:coding_challenge/shared/app_colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData expatrioThemeData = ThemeData(
@@ -26,13 +25,17 @@ ThemeData expatrioThemeData = ThemeData(
 );
 
 TextTheme _expatrioTextTheme = const TextTheme(
-  displayLarge: _displayLarge,
-  displayMedium: _displayMedium,
-  displaySmall: _displaySmall,
-  bodyLarge: _bodyLarge,
-  bodyMedium: _bodyMedium,
-  bodySmall: _bodySmall,
-);
+    displayLarge: _displayLarge,
+    displayMedium: _displayMedium,
+    displaySmall: _displaySmall,
+    bodyLarge: _bodyLarge,
+    bodyMedium: _bodyMedium,
+    bodySmall: _bodySmall,
+    labelLarge: _labelLarge,
+    labelMedium: _labelMedium,
+    labelSmall: _labelSmall,
+    titleLarge: _titleLarge,
+    titleMedium: _titleMedium);
 
 const TextStyle _displayLarge = TextStyle(
   color: AppColors.textColor,
@@ -49,11 +52,19 @@ const TextStyle _displaySmall = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w700,
 );
-
+const TextStyle _titleLarge = TextStyle(
+  color: AppColors.textColor,
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+);
+const TextStyle _titleMedium = TextStyle(
+  color: AppColors.textColor,
+  fontSize: 18,
+  fontWeight: FontWeight.w700,
+);
 const TextStyle _bodyLarge = TextStyle(
   color: AppColors.textColor,
   fontSize: 16,
-  height: AppDoubles.textLineHeight * 3,
   fontWeight: FontWeight.normal,
 );
 const TextStyle _bodyMedium = TextStyle(
@@ -63,6 +74,22 @@ const TextStyle _bodyMedium = TextStyle(
 );
 const TextStyle _bodySmall = TextStyle(
   color: AppColors.textColor,
-  fontSize: 10,
+  fontSize: 14,
   fontWeight: FontWeight.w300,
+);
+
+const TextStyle _labelSmall = TextStyle(
+  color: AppColors.textColor,
+  fontSize: 10,
+  fontWeight: FontWeight.normal,
+);
+const TextStyle _labelMedium = TextStyle(
+  color: AppColors.textColor,
+  fontSize: 14,
+  fontWeight: FontWeight.normal,
+);
+const TextStyle _labelLarge = TextStyle(
+  color: AppColors.textColor,
+  fontSize: 16,
+  fontWeight: FontWeight.normal,
 );
