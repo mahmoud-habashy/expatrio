@@ -48,4 +48,6 @@ class AppStrings {
   static const String taxDataModalErrorTitle = "Error";
   static const String taxDataModalErrorSubtitle = "Please try again later.";
   static const String taxDataModalErrorBtnText = "Refresh";
+  static const String taxDataModalCheckBoxConfirmationText =
+      "I confirm above tax residency and US self-declaration is true and accurate.";
 }
