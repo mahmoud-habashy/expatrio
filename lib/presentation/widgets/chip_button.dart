@@ -1,8 +1,8 @@
-import 'package:coding_challenge/constants/colors.dart';
-import 'package:coding_challenge/constants/doubles.dart';
+import 'package:coding_challenge/shared/app_colors.dart';
+import 'package:coding_challenge/shared/app_constants.dart';
 import 'package:flutter/material.dart';
 
-/// A customized rounded button widget with icon. 
+/// A customized rounded button widget with icon.
 class ChipButton extends StatelessWidget {
   /// The [text] is required argument for the chip text.
   /// [icon] is required argument it's icon.
@@ -30,28 +30,29 @@ class ChipButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
-            vertical: AppDoubles.paddingElement * 4,
-            horizontal: AppDoubles.paddingElement * 7),
+            vertical: AppConstants.paddingElement * 4,
+            horizontal: AppConstants.paddingElement * 7),
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(AppDoubles.defaultRadius),
+          borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
         ),
         child: Row(
           children: [
             Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppDoubles.defaultRadius),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.defaultRadius),
                   border: Border.all(
-                      width: AppDoubles.borderElement, color: contentColor)),
+                      width: AppConstants.borderElement, color: contentColor)),
               child: Icon(
                 icon,
-                size: AppDoubles.iconSize * 4,
+                size: AppConstants.iconSize * 4,
                 color: contentColor,
               ),
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(left: AppDoubles.paddingElement * 2),
+                  const EdgeInsets.only(left: AppConstants.paddingElement * 2),
               child: Text(
                 text,
                 style: Theme.of(context)

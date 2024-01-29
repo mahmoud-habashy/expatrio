@@ -1,5 +1,5 @@
-import 'package:coding_challenge/constants/colors.dart';
-import 'package:coding_challenge/constants/doubles.dart';
+import 'package:coding_challenge/shared/app_colors.dart';
+import 'package:coding_challenge/shared/app_constants.dart';
 import 'package:flutter/material.dart';
 
 /// A customized primary rounded button widget.
@@ -26,17 +26,17 @@ class PrimaryButton extends StatelessWidget {
         onPressed: onPressed,
         style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(
-                vertical: AppDoubles.paddingElement * 4),
+                vertical: AppConstants.paddingElement * 4),
             backgroundColor: fillColor,
             shape: RoundedRectangleBorder(
                 borderRadius:
-                    BorderRadius.circular(AppDoubles.radiusElement * 6))),
+                    BorderRadius.circular(AppConstants.radiusElement * 6))),
         child: Text(
           text,
           style: Theme.of(context)
               .textTheme
-              .bodyLarge!
-              .copyWith(color: textColor, fontWeight: FontWeight.w500),
+              .bodyMedium!
+              .copyWith(color: textColor),
         ));
   }
 }
