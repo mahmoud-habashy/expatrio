@@ -1,4 +1,5 @@
 class AppStrings {
+  static const String appTitle = "Expatrio";
   // Login Screen.
   static const String loginScreenHelpBtnText = "Help";
   static const String emailEntryHintText = "john.doe@gmail.com";

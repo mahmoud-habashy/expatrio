@@ -1,6 +1,10 @@
 import 'package:coding_challenge/shared/app_colors.dart';
 import 'package:flutter/material.dart';
 
+// THE APP'S THEME DATE.
+// To make sure that the all app follows the same guidelines.
+//
+
 ThemeData expatrioThemeData = ThemeData(
   pageTransitionsTheme: const PageTransitionsTheme(
     builders: {

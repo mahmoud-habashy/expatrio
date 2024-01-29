@@ -1,3 +1,7 @@
+// THE APP'S CONSTANTS.
+// To make sure that the all app follows the same spacing and sizing guidelines.
+//
+
 class AppConstants {
   static const double containerElement = 10.0;
   static const double paddingElement = 2.0;

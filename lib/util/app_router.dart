@@ -1,4 +1,3 @@
-import 'package:coding_challenge/config/app_config.dart';
 import 'package:coding_challenge/data/models/auth_model.dart';
 import 'package:coding_challenge/presentation/screens/dashboard_screen.dart';
 import 'package:coding_challenge/presentation/screens/login_screen.dart';
@@ -32,4 +31,10 @@ class AppRouter {
     }
     return null;
   }
+}
+
+class AppRoutes {
+  static const String splashScreen = "/";
+  static const String loginScreen = "/login";
+  static const String dashboardScreen = "/dashboard";
 }
