@@ -27,7 +27,7 @@ class AppValidators {
   }
 
   static String? isValidTaxId(String? taxId) {
-    // TODO(Mahmoud) Ask for the tax id RegExp.
+    // TODO(Mahmoud) RegExp for validating the tax id if any.
     taxId = taxId?.trim();
     if (taxId == null || taxId.isEmpty) {
       return AppStrings.taxIdRequired;
