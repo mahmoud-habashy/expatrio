@@ -24,30 +24,33 @@ class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            AppAssets.dashboardNeedTaxDataImage,
-            height: AppConstants.containerElement * 21,
-            width: AppConstants.containerElement * 18,
-          ),
-          Text(title, style: Theme.of(context).textTheme.displayLarge),
-          const SizedBox(height: AppConstants.containerElement),
-          SizedBox(
-            width: AppConstants.containerElement * 20,
-            child: Text(
-              subtitle,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.center,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              AppAssets.errorImage,
+              height: AppConstants.containerElement * 21,
+              width: AppConstants.containerElement * 18,
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: AppConstants.marginElement * 5),
-            width: AppConstants.containerElement * 16,
-            child: PrimaryButton(text: buttonText, onPressed: onRefresh),
-          ),
-        ],
+            Text(title, style: Theme.of(context).textTheme.displayLarge),
+            const SizedBox(height: AppConstants.containerElement),
+            SizedBox(
+              width: AppConstants.containerElement * 20,
+              child: Text(
+                subtitle,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              margin:
+                  const EdgeInsets.only(top: AppConstants.marginElement * 5),
+              width: AppConstants.containerElement * 16,
+              child: PrimaryButton(text: buttonText, onPressed: onRefresh),
+            ),
+          ],
+        ),
       ),
     );
   }
