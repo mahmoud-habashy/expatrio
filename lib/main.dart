@@ -1,65 +1,42 @@
+import 'package:coding_challenge/shared/app_strings.dart';
+import 'package:coding_challenge/shared/app_theme.dart';
+import 'package:coding_challenge/logic/cubit/auth_cubit/auth_cubit.dart';
+import 'package:coding_challenge/logic/cubit/tax_data_cubit/tax_data_cubit.dart';
+import 'package:coding_challenge/logic/cubit/tax_item_drop_down_cubit/tax_item_drop_down_cubit.dart';
+import 'package:coding_challenge/logic/cubit/user_cubit/user_cubit.dart';
+import 'package:coding_challenge/util/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ExpatrioApp(
+    appRouter: AppRouter(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class ExpatrioApp extends StatelessWidget {
+  final AppRouter appRouter;
+  const ExpatrioApp({super.key, required this.appRouter});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android:  CupertinoPageTransitionsBuilder(),
-            TargetPlatform.iOS:  CupertinoPageTransitionsBuilder(),
-          },
-        ),
-        canvasColor: Colors.transparent,
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor:  Color.fromRGBO(65, 171, 158, 1),
-          selectionColor:  Color.fromRGBO(65, 171, 158, 1),
-          selectionHandleColor:  Color.fromRGBO(65, 171, 158, 1),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: createMaterialColor(Colors.white)).copyWith(
-          secondary: createMaterialColor(const Color.fromRGBO(65, 171, 158, 1)),
-        ),
-        primaryColorDark: Colors.white,
-      ),
-      home: Scaffold(
-          body: SafeArea(
-            child: Container(
-              color: Colors.white,
-            ),
-          ),
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthCubit>(create: (BuildContext context) => AuthCubit()),
+        BlocProvider<UserCubit>(create: (BuildContext context) => UserCubit()),
+        BlocProvider<TaxDataCubit>(
+            create: (BuildContext context) => TaxDataCubit()),
+        BlocProvider<TaxItemDropDownCubit>(
+            create: (BuildContext context) => TaxItemDropDownCubit()),
+      ],
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          title: AppStrings.appTitle,
+          theme: expatrioThemeData,
+          initialRoute: AppRoutes.splashScreen,
+          navigatorKey: navigatorKey,
+          onGenerateRoute: appRouter.generateRoute,
+        );
+      }),
     );
   }
 }
-
-MaterialColor createMaterialColor(Color color) {
-  List strengths = <double>[.05];
-  Map<int, Color> swatch = <int, Color>{};
-  final int r = color.red, g = color.green, b = color.blue;
-
-  for (int i = 1; i < 10; i++) {
-    strengths.add(0.1 * i);
-  }
-  for (var strength in strengths) {
-    final double ds = 0.5 - strength;
-    swatch[(strength * 1000).round()] = Color.fromRGBO(
-      r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-      g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-      b + ((ds < 0 ? b : (255 - b)) * ds).round(),
-      1,
-    );
-  }
-  return MaterialColor(color.value, swatch);
-}
-
