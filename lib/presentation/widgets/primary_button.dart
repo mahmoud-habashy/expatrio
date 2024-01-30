@@ -34,10 +34,8 @@ class PrimaryButton extends StatelessWidget {
                     BorderRadius.circular(AppConstants.radiusElement * 6))),
         child: Text(
           text,
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(color: textColor),
+          style:
+              Theme.of(context).textTheme.bodySmall!.copyWith(color: textColor),
         ));
   }
 }
