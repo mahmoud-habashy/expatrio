@@ -35,18 +35,16 @@ class ActionResult extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            margin: const EdgeInsets.only(
-                top: AppConstants.defaultMargin * 2,
-                bottom: AppConstants.defaultMargin),
-            height: AppConstants.containerElement * 10,
-            width: AppConstants.containerElement * 10,
+            margin: const EdgeInsets.all(AppConstants.defaultMargin),
+            height: AppConstants.containerElement * 8,
+            width: AppConstants.containerElement * 8,
             child: Lottie.asset(lottieAsset, repeat: repeatAnimation),
           ),
           Text(title, style: Theme.of(context).textTheme.displayLarge),
           Container(
             margin: const EdgeInsets.only(
                 bottom: AppConstants.defaultMargin * 2,
-                top: AppConstants.marginElement * 3),
+                top: AppConstants.marginElement * 2),
             child: Text(
               subtitle,
               style: Theme.of(context).textTheme.bodyMedium,
@@ -55,8 +53,9 @@ class ActionResult extends StatelessWidget {
           ),
           if (primaryBtnText != null && onPrimaryBtnPressed != null)
             Container(
-              margin: const EdgeInsets.only(bottom: AppConstants.defaultMargin),
-              width: AppConstants.containerElement * 18,
+              margin: const EdgeInsets.only(
+                  bottom: AppConstants.marginElement * 13),
+              width: AppConstants.containerElement * 16,
               child: PrimaryButton(
                   text: primaryBtnText!, onPressed: onPrimaryBtnPressed!),
             )

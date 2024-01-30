@@ -27,7 +27,7 @@ class PrimaryButton extends StatelessWidget {
         onPressed: onPressed,
         style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(
-                vertical: AppConstants.paddingElement * 4),
+                vertical: AppConstants.paddingElement * 5),
             backgroundColor: fillColor,
             shape: RoundedRectangleBorder(
                 borderRadius:
@@ -36,7 +36,7 @@ class PrimaryButton extends StatelessWidget {
           text,
           style: Theme.of(context)
               .textTheme
-              .bodyMedium!
+              .bodySmall!
               .copyWith(color: textColor),
         ));
   }

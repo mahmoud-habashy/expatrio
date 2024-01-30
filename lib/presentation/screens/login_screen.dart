@@ -150,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: AppConstants.defaultPadding * 2),
+                      horizontal: AppConstants.defaultPadding * 4),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -159,10 +159,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         Container(
                           margin: const EdgeInsets.only(
                               top: AppConstants.defaultMargin,
-                              bottom: AppConstants.defaultMargin * 2),
+                              bottom: AppConstants.marginElement * 6),
                           child: Image.asset(
                             AppAssets.expatrioLogo,
-                            height: AppConstants.containerElement * 6,
+                            height: AppConstants.containerElement * 5,
                             width: double.infinity,
                           ),
                         ),
@@ -184,11 +184,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           hintText: AppStrings.passwordEntryHintText,
                           onFormSubmit: _onFormSubmit,
                         ),
-                        const SizedBox(
-                            height: AppConstants.containerElement * 2),
-                        PrimaryButton(
-                          onPressed: _onFormSubmit,
-                          text: AppStrings.loginBtnText,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: AppConstants.defaultPadding),
+                          child: PrimaryButton(
+                            onPressed: _onFormSubmit,
+                            text: AppStrings.loginBtnText,
+                          ),
                         ),
                       ],
                     ),
@@ -200,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 bottom: MediaQuery.of(context).padding.bottom,
                 child: Container(
                   margin: const EdgeInsets.only(
-                      bottom: AppConstants.defaultMargin,
+                      bottom: AppConstants.marginElement * 5,
                       left: AppConstants.defaultMargin),
                   child: ChipButton(
                       icon: Icons.question_mark_rounded,

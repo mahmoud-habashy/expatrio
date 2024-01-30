@@ -78,7 +78,7 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
       padding: const EdgeInsets.only(left: AppConstants.paddingElement),
       margin: const EdgeInsets.only(
           bottom: AppConstants.marginElement,
-          top: AppConstants.marginElement * 5),
+          top: AppConstants.marginElement * 4),
       child: CustomLabel(
         text: text,
         textStyle: Theme.of(context).textTheme.labelMedium!,
@@ -98,6 +98,18 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
         BlocBuilder<TaxItemDropDownCubit, TaxItemDropDownState>(
           builder: (context, state) {
             return DropdownSearch<ItemDropDown>(
+              dropdownDecoratorProps: const DropDownDecoratorProps(
+                  dropdownSearchDecoration: InputDecoration(
+                contentPadding: EdgeInsets.all(AppConstants.paddingElement * 8),
+                suffixIconColor: AppColors.lightGrey,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      width: AppConstants.borderElement,
+                      color: AppColors.lightGrey),
+                  borderRadius: BorderRadius.all(
+                      Radius.circular(AppConstants.radiusElement)),
+                ),
+              )),
               selectedItem: _selectedDropDownItem,
               validator: AppValidators.isValidCountry,
               onChanged: (value) {
@@ -109,56 +121,64 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
               },
               items: context.watch<TaxItemDropDownCubit>().state.items,
               popupProps: PopupProps.modalBottomSheet(
-                  showSearchBox: true,
-                  title: Container(
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      color: AppColors.primary,
-                      borderRadius: BorderRadius.only(
-                        topLeft:
-                            Radius.circular(AppConstants.radiusElement * 7),
-                        topRight:
-                            Radius.circular(AppConstants.radiusElement * 7),
-                      ),
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.7),
+                showSearchBox: true,
+                title: Container(
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    color: AppColors.primary,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(AppConstants.radiusElement * 5),
+                      topRight: Radius.circular(AppConstants.radiusElement * 5),
                     ),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: AppConstants.paddingElement * 6),
-                    child: Text(AppStrings.taxDataModalCountryLabel,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(color: AppColors.white)),
                   ),
-                  listViewProps: const ListViewProps(
-                      padding: EdgeInsets.only(
-                          bottom: AppConstants.defaultPadding * 2)),
-                  itemBuilder: (BuildContext context, ItemDropDown itemDropDown,
-                      bool isSelected) {
-                    return Padding(
-                      padding:
-                          const EdgeInsets.all(AppConstants.defaultPadding),
-                      child: Text(
-                        itemDropDown.label,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                    );
-                  },
-                  searchFieldProps: TextFieldProps(
-                      autocorrect: false,
-                      decoration: InputDecoration(
-                          hintText: AppStrings.taxDataModalCountryHintText,
-                          hintStyle: Theme.of(context).textTheme.bodyMedium,
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: AppConstants.paddingElement * 6,
-                              vertical: AppConstants.paddingElement * 2),
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(
-                                AppConstants.radiusElement * 3)),
-                          )))),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: AppConstants.paddingElement * 7),
+                  child: Text(AppStrings.taxDataModalCountryLabel,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(color: AppColors.white)),
+                ),
+                listViewProps: const ListViewProps(
+                    padding: EdgeInsets.only(
+                        bottom: AppConstants.defaultPadding * 2)),
+                itemBuilder: (BuildContext context, ItemDropDown itemDropDown,
+                    bool isSelected) {
+                  return Padding(
+                    padding:
+                        const EdgeInsets.all(AppConstants.paddingElement * 10),
+                    child: Text(
+                      itemDropDown.label,
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
+                  );
+                },
+                searchFieldProps: TextFieldProps(
+                  autocorrect: false,
+                  decoration: InputDecoration(
+                    hintText: AppStrings.taxDataModalCountryHintText,
+                    hintStyle: Theme.of(context).textTheme.bodyMedium,
+                    contentPadding:
+                        const EdgeInsets.all(AppConstants.paddingElement * 7),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(
+                          width: AppConstants.borderElement,
+                          color: AppColors.lightGrey),
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(AppConstants.radiusElement * 2)),
+                    ),
+                  ),
+                ),
+              ),
             );
           },
         ),
-        _buildLabelWidget(text: AppStrings.taxDataModalTaxNumberLabel),
+        Padding(
+          padding: const EdgeInsets.only(top: AppConstants.paddingElement * 2),
+          child: _buildLabelWidget(text: AppStrings.taxDataModalTaxNumberLabel),
+        ),
         TextFormField(
           autocorrect: false,
           textInputAction: TextInputAction.done,
@@ -174,17 +194,20 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
               hintText: AppStrings.taxDataModalTaxNumberHintText,
               hintStyle: Theme.of(context).textTheme.bodyMedium,
               contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppConstants.paddingElement * 6,
-                  vertical: AppConstants.defaultPadding),
+                  horizontal: AppConstants.defaultPadding,
+                  vertical: AppConstants.paddingElement * 7),
               focusedBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                       Radius.circular(AppConstants.radiusElement)),
                   borderSide: BorderSide(
                     color: AppColors.primary,
                   )),
-              border: const OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                    width: AppConstants.borderElement,
+                    color: AppColors.lightGrey),
                 borderRadius: BorderRadius.all(
-                    Radius.circular(AppConstants.radiusElement * 3)),
+                    Radius.circular(AppConstants.radiusElement * 2)),
               )),
         ),
         if (!_isPrimaryTaxResidence)
@@ -197,7 +220,7 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
                     color: AppColors.accent, fontWeight: FontWeight.w700),
                 icon: Icons.remove,
                 iconColor: AppColors.accent,
-                iconSize: AppConstants.iconSize * 3,
+                iconSize: AppConstants.iconSize * 2,
                 onPressed: () {
                   _onRemove!(_index!);
                 }),

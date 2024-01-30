@@ -12,7 +12,7 @@ void showSnackBarMessage(
     content: Text(message,
         style: Theme.of(context)
             .textTheme
-            .displayMedium!
+            .bodyMedium!
             .copyWith(color: AppColors.white, fontWeight: FontWeight.w500)),
     duration: const Duration(milliseconds: AppConstants.animationDuration * 2),
     backgroundColor: AppColors.grey,
@@ -39,7 +39,7 @@ Future<void> openBottomSheet(
     builder: (BuildContext context) {
       return Container(
           constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height * 2 / 3),
+              maxHeight: MediaQuery.of(context).size.height * 3 / 4),
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           width: double.infinity,

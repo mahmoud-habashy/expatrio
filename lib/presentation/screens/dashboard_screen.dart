@@ -82,14 +82,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 children: [
                   SvgPicture.asset(
                     AppAssets.errorImage,
-                    height: AppConstants.containerElement * 21,
+                    height: AppConstants.containerElement * 23,
                     width: AppConstants.containerElement * 18,
                   ),
                   Text(AppStrings.dashboardNeedTaxDataTitle,
                       style: Theme.of(context).textTheme.displayLarge),
                   const SizedBox(height: AppConstants.containerElement),
                   SizedBox(
-                    width: AppConstants.containerElement * 20,
+                    width: AppConstants.containerElement * 21,
                     child: Text(
                       AppStrings.dashboardNeedTaxDataSubtitle,
                       style: Theme.of(context).textTheme.bodyLarge,
@@ -99,7 +99,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   Container(
                     margin: const EdgeInsets.only(
                         top: AppConstants.marginElement * 5),
-                    width: AppConstants.containerElement * 26,
+                    width: AppConstants.containerElement * 20,
                     child: PrimaryButton(
                         text: AppStrings.dashboardUpdateTaxDataBtnText,
                         onPressed: () {

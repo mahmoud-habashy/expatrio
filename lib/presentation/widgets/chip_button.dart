@@ -44,7 +44,8 @@ class ChipButton extends StatelessWidget {
                   borderRadius:
                       BorderRadius.circular(AppConstants.defaultRadius),
                   border: Border.all(
-                      width: AppConstants.borderElement, color: contentColor)),
+                      width: AppConstants.borderElement * 2,
+                      color: contentColor)),
               child: Icon(
                 icon,
                 size: AppConstants.iconSize * 4,
@@ -52,14 +53,13 @@ class ChipButton extends StatelessWidget {
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(left: AppConstants.paddingElement * 2),
+              padding: const EdgeInsets.only(left: AppConstants.paddingElement),
               child: Text(
                 text,
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
-                    .copyWith(color: contentColor, fontWeight: FontWeight.w700),
+                    .copyWith(color: contentColor, fontWeight: FontWeight.w800),
               ),
             ),
           ],

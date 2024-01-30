@@ -111,15 +111,17 @@ class _TaxDataState extends State<TaxData> {
                 return Form(
                     key: _formKey,
                     child: SingleChildScrollView(
-                      padding:
-                          const EdgeInsets.all(AppConstants.defaultPadding * 2),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: AppConstants.defaultPadding * 2,
+                          horizontal: AppConstants.paddingElement * 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             margin: const EdgeInsets.only(
-                                bottom: AppConstants.marginElement * 2),
+                                bottom: AppConstants.marginElement,
+                                top: AppConstants.marginElement * 5),
                             child: Text(AppStrings.taxDataModalTitle,
                                 style: Theme.of(context).textTheme.titleLarge),
                           ),
@@ -175,7 +177,8 @@ class _TaxDataState extends State<TaxData> {
                                   setState(() => _isConfirmed = !_isConfirmed)),
                           Container(
                             margin: const EdgeInsets.only(
-                                top: AppConstants.defaultMargin * 2),
+                                top: AppConstants.defaultMargin * 2,
+                                bottom: AppConstants.marginElement * 3),
                             width: AppConstants.containerElement * 16,
                             child: PrimaryButton(
                               text: AppStrings.saveTaxEntryBtnText,

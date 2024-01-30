@@ -96,7 +96,12 @@ class _LoginEntryFieldState extends State<LoginEntryField> {
       onPressed = _passwordSuffixOnTap;
     }
     return IconButton(
-        onPressed: onPressed, icon: Icon(icon, color: AppColors.primary));
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          color: AppColors.primary,
+          size: AppConstants.iconSize * 5,
+        ));
   }
 
   @override
@@ -104,9 +109,9 @@ class _LoginEntryFieldState extends State<LoginEntryField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-            margin:
-                const EdgeInsets.only(bottom: AppConstants.marginElement * 2),
+        Padding(
+            padding:
+                const EdgeInsets.only(bottom: AppConstants.paddingElement * 4),
             child: _getLabelWidget()),
         TextFormField(
           keyboardType: TextInputType.emailAddress,
@@ -124,24 +129,25 @@ class _LoginEntryFieldState extends State<LoginEntryField> {
           focusNode: _inputFocusNode,
           controller: _textEditingController,
           decoration: InputDecoration(
-              hintText: _hintText,
-              hintStyle: Theme.of(context).textTheme.bodyMedium,
-              contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppConstants.paddingElement * 6,
-                  vertical: AppConstants.defaultPadding),
-              suffixIcon: _textEditingController.text.isNotEmpty
-                  ? _getSuffixIcon()
-                  : null,
-              focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(AppConstants.radiusElement * 2)),
-                  borderSide: BorderSide(
-                    color: AppColors.primary,
-                  )),
-              border: const OutlineInputBorder(
+            hintText: _hintText,
+            hintStyle: Theme.of(context).textTheme.bodyMedium,
+            contentPadding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.paddingElement * 6,
+                vertical: AppConstants.paddingElement * 7),
+            suffixIcon: _textEditingController.text.isNotEmpty
+                ? _getSuffixIcon()
+                : null,
+            focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(
-                    Radius.circular(AppConstants.radiusElement * 2)),
-              )),
+                    Radius.circular(AppConstants.radiusElement)),
+                borderSide: BorderSide(
+                  color: AppColors.primary,
+                )),
+            border: const OutlineInputBorder(
+              borderRadius:
+                  BorderRadius.all(Radius.circular(AppConstants.radiusElement)),
+            ),
+          ),
         ),
       ],
     );

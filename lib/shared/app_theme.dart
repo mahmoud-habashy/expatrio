@@ -43,7 +43,7 @@ TextTheme _expatrioTextTheme = const TextTheme(
 
 const TextStyle _displayLarge = TextStyle(
   color: AppColors.textColor,
-  fontSize: 22,
+  fontSize: 24,
   fontWeight: FontWeight.w700,
 );
 const TextStyle _displayMedium = TextStyle(
@@ -53,12 +53,12 @@ const TextStyle _displayMedium = TextStyle(
 );
 const TextStyle _displaySmall = TextStyle(
   color: AppColors.textColor,
-  fontSize: 16,
-  fontWeight: FontWeight.w700,
+  fontSize: 17,
+  fontWeight: FontWeight.normal,
 );
 const TextStyle _titleLarge = TextStyle(
   color: AppColors.textColor,
-  fontSize: 20,
+  fontSize: 22,
   fontWeight: FontWeight.w700,
 );
 const TextStyle _titleMedium = TextStyle(
@@ -70,6 +70,7 @@ const TextStyle _bodyLarge = TextStyle(
   color: AppColors.textColor,
   fontSize: 16,
   fontWeight: FontWeight.normal,
+  letterSpacing: 0.0,
 );
 const TextStyle _bodyMedium = TextStyle(
   color: AppColors.textColor,
@@ -78,19 +79,22 @@ const TextStyle _bodyMedium = TextStyle(
 );
 const TextStyle _bodySmall = TextStyle(
   color: AppColors.textColor,
-  fontSize: 14,
-  fontWeight: FontWeight.w300,
+  fontSize: 13,
+  fontWeight: FontWeight.normal,
 );
 
 const TextStyle _labelSmall = TextStyle(
   color: AppColors.textColor,
-  fontSize: 10,
-  fontWeight: FontWeight.normal,
+  fontSize: 11,
+  fontWeight: FontWeight.w500,
+  letterSpacing: 0.0,
 );
+
 const TextStyle _labelMedium = TextStyle(
   color: AppColors.textColor,
-  fontSize: 14,
+  fontSize: 13,
   fontWeight: FontWeight.normal,
+  letterSpacing: 0.0,
 );
 const TextStyle _labelLarge = TextStyle(
   color: AppColors.textColor,

@@ -5,9 +5,10 @@ class AppColors {
   static const Color background = Color(0xFFFFFFFF);
   static const Color white = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFF4CB3A8);
-  static const Color accent = Color(0xFFFB7053);
+  static const Color accent = Color.fromARGB(255, 246, 66, 53);
   static const Color textColor = Color(0xFF262626);
   static const Color grey = Color(0xFF3B3B3A);
+  static const Color lightGrey = Color(0xFFA8A8A8);
   static const Color green = Color(0xFF4CAF50);
   static const Color iconColor = Color(0xFF262626);
   static const Color appBarLeadingIconColor = Color(0xFF000000);

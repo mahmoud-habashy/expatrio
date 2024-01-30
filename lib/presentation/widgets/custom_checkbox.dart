@@ -29,9 +29,8 @@ class CustomCheckbox extends StatelessWidget {
           checkColor: AppColors.white,
           activeColor: AppColors.primary,
           side: BorderSide(
-            color: checkBoxBorderColor,
-            width: AppConstants.borderElement,
-          ),
+              color: checkBoxBorderColor,
+              width: AppConstants.borderElement * 2),
           onChanged: onChanged,
         ),
         Expanded(
