@@ -86,6 +86,15 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
     );
   }
 
+  InputBorder _getInputBorder() {
+    return const OutlineInputBorder(
+      borderSide: BorderSide(
+          width: AppConstants.borderElement, color: AppColors.lightGrey),
+      borderRadius:
+          BorderRadius.all(Radius.circular(AppConstants.radiusElement * 2)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -98,18 +107,13 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
         BlocBuilder<TaxItemDropDownCubit, TaxItemDropDownState>(
           builder: (context, state) {
             return DropdownSearch<ItemDropDown>(
-              dropdownDecoratorProps: const DropDownDecoratorProps(
+              dropdownDecoratorProps: DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
-                contentPadding: EdgeInsets.all(AppConstants.paddingElement * 8),
-                suffixIconColor: AppColors.lightGrey,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      width: AppConstants.borderElement,
-                      color: AppColors.lightGrey),
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(AppConstants.radiusElement)),
-                ),
-              )),
+                      contentPadding:
+                          const EdgeInsets.all(AppConstants.paddingElement * 8),
+                      suffixIconColor: AppColors.lightGrey,
+                      border: _getInputBorder(),
+                      enabledBorder: _getInputBorder())),
               selectedItem: _selectedDropDownItem,
               validator: AppValidators.isValidCountry,
               onChanged: (value) {
@@ -162,12 +166,9 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
                     hintStyle: Theme.of(context).textTheme.bodyMedium,
                     contentPadding:
                         const EdgeInsets.all(AppConstants.paddingElement * 7),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                          width: AppConstants.borderElement,
-                          color: AppColors.lightGrey),
+                    border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(
-                          Radius.circular(AppConstants.radiusElement * 2)),
+                          Radius.circular(AppConstants.radiusElement * 3)),
                     ),
                   ),
                 ),
@@ -202,13 +203,8 @@ class _TaxEntryFieldState extends State<TaxEntryField> {
                   borderSide: BorderSide(
                     color: AppColors.primary,
                   )),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                    width: AppConstants.borderElement,
-                    color: AppColors.lightGrey),
-                borderRadius: BorderRadius.all(
-                    Radius.circular(AppConstants.radiusElement * 2)),
-              )),
+              border: _getInputBorder(),
+              enabledBorder: _getInputBorder()),
         ),
         if (!_isPrimaryTaxResidence)
           Container(
