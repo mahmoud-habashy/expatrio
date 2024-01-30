@@ -77,38 +77,41 @@ class _DashboardScreenState extends State<DashboardScreen> {
           }
           if (state is UserFetchSuccess) {
             return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    AppAssets.errorImage,
-                    height: AppConstants.containerElement * 23,
-                    width: AppConstants.containerElement * 18,
-                  ),
-                  Text(AppStrings.dashboardNeedTaxDataTitle,
-                      style: Theme.of(context).textTheme.displayLarge),
-                  const SizedBox(height: AppConstants.containerElement),
-                  SizedBox(
-                    width: AppConstants.containerElement * 21,
-                    child: Text(
-                      AppStrings.dashboardNeedTaxDataSubtitle,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                      textAlign: TextAlign.center,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      AppAssets.errorImage,
+                      height: AppConstants.containerElement * 23,
+                      width: AppConstants.containerElement * 18,
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                        top: AppConstants.marginElement * 5),
-                    width: AppConstants.containerElement * 20,
-                    child: PrimaryButton(
-                        text: AppStrings.dashboardUpdateTaxDataBtnText,
-                        onPressed: () {
-                          openBottomSheet(
-                              context: context,
-                              content: TaxData(userId: state.userModel.id));
-                        }),
-                  ),
-                ],
+                    Text(AppStrings.dashboardNeedTaxDataTitle,
+                        style: Theme.of(context).textTheme.displayLarge),
+                    const SizedBox(height: AppConstants.containerElement),
+                    SizedBox(
+                      width: AppConstants.containerElement * 21,
+                      child: Text(
+                        AppStrings.dashboardNeedTaxDataSubtitle,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(
+                          top: AppConstants.marginElement * 5),
+                      width: AppConstants.containerElement * 20,
+                      child: PrimaryButton(
+                          text: AppStrings.dashboardUpdateTaxDataBtnText,
+                          onPressed: () {
+                            openBottomSheet(
+                                context: context,
+                                content: TaxData(userId: state.userModel.id));
+                          }),
+                    ),
+                  ],
+                ),
               ),
             );
           }
