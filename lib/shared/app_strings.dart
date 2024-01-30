@@ -13,14 +13,14 @@ class AppStrings {
   static const String loginBtnText = "LOGIN";
   static const String loginSnackBarMessage = "Trying to login...";
   static const String loginSuccessTitle = "Successfull Login";
-  static const String loginFaildTitle = "Login Faild";
+  static const String loginFailedTitle = "Login Failed";
   static const String loginSuccessSubtitle =
       "You will be redirected to your dashboard";
-  static const String loginFaildSubtitle = "Please try again later.";
+  static const String loginFailedSubtitle = "Please try again later.";
   static const String loginBottomModalsBtnText = "GOT IT";
 
 // Dashboard Screen.
-  static const String dashboardAppBartitle = "Dashboard";
+  static const String dashboardAppBarTitle = "Dashboard";
   static const String dashboardNeedTaxDataTitle = "Uh- oh!";
   static const String dashboardNeedTaxDataSubtitle =
       "We need your tax data in order for you to access your account.";

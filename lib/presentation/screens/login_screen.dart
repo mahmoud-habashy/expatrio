@@ -116,8 +116,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 content: ActionResult(
                   lottieAsset: AppAssets.errorAnimation,
                   repeatAnimation: true,
-                  title: AppStrings.loginFaildTitle,
-                  subtitle: state.errorMessage ?? AppStrings.loginFaildSubtitle,
+                  title: AppStrings.loginFailedTitle,
+                  subtitle:
+                      state.errorMessage ?? AppStrings.loginFailedSubtitle,
                   primaryBtnText: AppStrings.loginBottomModalsBtnText,
                   onPrimaryBtnPressed: () => Navigator.of(context).pop(),
                 ));
@@ -161,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               top: AppConstants.defaultMargin,
                               bottom: AppConstants.marginElement * 6),
                           child: Image.asset(
-                            AppAssets.expatrioLogo,
+                            AppAssets.appLogo,
                             height: AppConstants.containerElement * 5,
                             width: double.infinity,
                           ),

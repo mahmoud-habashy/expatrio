@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
         },
         child: Center(
           child: Image.asset(
-            AppAssets.expatrioLogo,
+            AppAssets.appLogo,
             height: AppConstants.containerElement * 6,
             width: double.infinity,
           ),

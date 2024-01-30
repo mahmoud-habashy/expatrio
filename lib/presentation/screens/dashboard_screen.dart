@@ -50,7 +50,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         shadowColor: AppColors.shadowColor,
         elevation: AppConstants.appBarElevation,
-        title: const Text(AppStrings.dashboardAppBartitle),
+        title: const Text(AppStrings.dashboardAppBarTitle),
         centerTitle: true,
         actions: [
           // NOTE: This Button For Test the logout.
