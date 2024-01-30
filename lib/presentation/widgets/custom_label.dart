@@ -9,7 +9,7 @@ class CustomLabel extends StatelessWidget {
   /// [icon] is optional argument, if you want to add icon on the left side of the text provide this argument.
   /// [iconColor] is optional argument for icon color, the default value is AppColors.iconColor.
   /// [iconSize] is optional argument for icon size, the default value is AppConstants.defaultIconSize.
-  /// 
+  ///
   final String text;
   final TextStyle textStyle;
   final IconData? icon;

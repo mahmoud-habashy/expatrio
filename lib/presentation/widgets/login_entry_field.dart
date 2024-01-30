@@ -90,7 +90,7 @@ class _LoginEntryFieldState extends State<LoginEntryField> {
   Widget _getSuffixIcon() {
     IconData icon = Icons.close;
     VoidCallback onPressed = _emailSuffixOnTap;
-    
+
     if (_entryType == LoginEntryType.password) {
       icon = _passwordVisible ? Icons.visibility_off : Icons.visibility;
       onPressed = _passwordSuffixOnTap;

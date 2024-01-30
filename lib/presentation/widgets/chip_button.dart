@@ -9,7 +9,7 @@ class ChipButton extends StatelessWidget {
   /// [onTap] is required argument, the VoidCallback function that gets invoked on every tap.
   /// [backgroundColor] is optional argument, the default value is AppColors.background.
   /// [contentColor] is optional argument for content color, the default value is AppColors.primary.
-  /// 
+  ///
   final String text;
   final IconData icon;
   final Color backgroundColor;

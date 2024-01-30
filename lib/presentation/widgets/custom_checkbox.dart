@@ -8,7 +8,7 @@ class CustomCheckbox extends StatelessWidget {
   /// [value] is required argument for the Checkbox widget.
   /// [onChanged] is required argument, function that gets invoked on change tap.
   /// [checkBoxBorderColor] is required argument, for the checkbox border color.
-  /// 
+  ///
   final Function(bool?)? onChanged;
   final bool value;
   final Color checkBoxBorderColor;

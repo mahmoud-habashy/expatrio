@@ -18,7 +18,7 @@ enum TaxEntryFieldType { country, id }
 /// The first one is country input allow user to select country the user will not be able to choose a previously selected country.
 /// The second one is Tax Number input allow user to enter his tax number.
 /// it has secondary button to allow the user to remove specific entry.
-/// 
+///
 
 class TaxEntryField extends StatefulWidget {
   /// The [tax] is required argument to access the Tax Data.
