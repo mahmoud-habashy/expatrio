@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 class ChipButton extends StatelessWidget {
   /// The [text] is required argument for the chip text.
   /// [icon] is required argument it's icon.
-  /// [onTap] is required argument, the VoidCallback function that gets invoked on every tap.  .
+  /// [onTap] is required argument, the VoidCallback function that gets invoked on every tap.
   /// [backgroundColor] is optional argument, the default value is AppColors.background.
   /// [contentColor] is optional argument for content color, the default value is AppColors.primary.
+  /// 
   final String text;
   final IconData icon;
   final Color backgroundColor;

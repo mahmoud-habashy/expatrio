@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 /// A customized primary rounded button widget.
 class PrimaryButton extends StatelessWidget {
   /// The [text] is required argument for the chip text.
-  /// [onPressed] is required argument, the VoidCallback function that gets invoked on every tap.  .
+  /// [onPressed] is required argument, the VoidCallback function that gets invoked on every tap.
   /// [fillColor] is optional argument, the default value is AppColors.primary.
   /// [textColor] is optional argument for text color, the default value is AppColors.white.
+  ///
   final String text;
   final VoidCallback onPressed;
   final Color fillColor;

@@ -2,6 +2,10 @@ import 'package:coding_challenge/shared/app_colors.dart';
 import 'package:coding_challenge/shared/app_constants.dart';
 import 'package:flutter/material.dart';
 
+/// This Function when invoked it shows the snack bar, with given [message].
+/// [message] is required argument snack bar message.
+/// [context] is required argument for build context.
+///
 void showSnackBarMessage(
     {required BuildContext context, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -14,6 +18,11 @@ void showSnackBarMessage(
     backgroundColor: AppColors.grey,
   ));
 }
+
+/// This Function when invoked it opens a customized bottom modal sheet,
+/// [context] is required argument for build context.
+/// [content] is required argument for the modal bottom sheet content.
+///
 
 Future<void> openBottomSheet(
     {required BuildContext context, required Widget content}) {
