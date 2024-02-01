@@ -52,6 +52,7 @@ class AuthCubit extends Cubit<AuthState> {
       if (hasValidToken) {
         emit(AuthValidToken(authModel: authModel));
       } else {
+        await AuthRepository.deleteLoginTokenData();
         emit(AuthInvalidToken(authModel: authModel));
       }
     } catch (err) {
